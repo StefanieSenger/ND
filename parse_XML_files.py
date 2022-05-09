@@ -1,10 +1,12 @@
 import xml.etree.ElementTree as ET
 from datetime import datetime
 import pandas as pd
+import os
+import re
 
-# function for parsing relevant information from those +150,000 XML files
+# function for parsing relevant information from all those +830,000 XML files
 def parsing_words(path):
-    
+
     # reading in a single XML file
     tree = ET.parse(path)
     root = tree.getroot()
@@ -23,13 +25,18 @@ def parsing_words(path):
     data_df = pd.DataFrame(contents, columns =['single_word'])
     data_df['date'] = metadata_date 
     data_df['page'] = metadata_page
-    print(data_df)
+
+# making a list of all file paths that lead to XML files (except for the METS files)
+all_paths = []
+for root, directory_names,file_names in os.walk('2532889X'):
+    for file in file_names:
+        ismetsfile = re.search('.*mets\.xml', file)
+        if not ismetsfile:
+            all_paths.append(os.path.join(root, file))
 
 
+# calling the parsing_words function on each element of all_paths
 parsing_words('2532889X/1946/04/23/01/presentation/2532889X_1946-04-23_01_001.xml')
-
-
-
 
 
 
