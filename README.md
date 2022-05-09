@@ -16,7 +16,7 @@ This is what the heading from the first issue looks like within the XML file (yo
 along with information on their position and formatting):
 <image src="images/1946-23-04_XML_Header.png"/>
 
-The METS files hold some metadata that make those +150.000 XML files relatable to each other.
+The METS files hold some metadata that make those +150,000 XML files relatable to each other.
 
 Not publishing the received data is a legal requirement, which of cause I conform to. If you want to start a similar analysis however, I would convey you to the [StabiHacks](https://github.com/elektrobohemian/StabiHacks) tool on GitHub, created by the former head of the department "Informations- und Datenmanagement" David Zellhöfer.
 
