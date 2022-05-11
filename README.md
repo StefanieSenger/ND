@@ -23,7 +23,7 @@ Not publishing the received data is a legal requirement, which of cause I confor
 To process the contents, I retrieved the single words from the XML files and linked them with the corresponding metadata (publishing date, page) using Python's [Element Tree Module](https://docs.python.org/3/library/xml.etree.elementtree.html). Then, I iterated this process over all of the XML files and joined everything into one dataframe.
 
 That's the code I used to grab all the file paths that lead to XML files:
-<image src="images/Screenshot_from_2022-05-11_23-47-47.png"/>
+<image src="images/Screenshot_from_2022-05-11_23-47-47.png" width="370"/>
 
-Because in fact, the hierarchy of the folders looks like this:
-<image src="images/Screenshot_from_2022-05-11_23-56-46.png"/>
+Walking recursively over all sub-folders is, in fact, necessary, because the hierarchy of the folders looks like this:
+<image src="images/Screenshot_from_2022-05-11_23-56-46.png" width="100"/>
