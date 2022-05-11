@@ -12,13 +12,18 @@ This is what the first issue dated April 23rd 1946 looks like:
 
 For my analytical project the [Berlin State Library](https://en.wikipedia.org/wiki/Berlin_State_Library)'s department "Informations- und Datenmanagement" kindly provided me with the [METS](https://en.wikipedia.org/wiki/Metadata_Encoding_and_Transmission_Standard) and [XML]() files, so I could quickly start. Many thanks to Borries Jensen, who made this possible! 
 
-This is what the heading from the first issue looks like within the XML file (you can find the single words in the CONTENT="xxx" attribute 
-along with information on their position and formatting):
+This is what the heading from the first issue looks like within the XML file (you can find the single words in the CONTENT="xxx" attribute along with information on their position and formatting):
 <image src="images/1946-23-04_XML_Header.png"/>
 
-The METS files hold some metadata that make those +830,000 XML files relatable to each other.
+The METS files hold some metadata that make +100,000 XML files, each containing information on a single page, relatable to each other.
 
 Not publishing the received data is a legal requirement, which of cause I conform to. If you want to start a similar analysis however, I would convey you to the [StabiHacks](https://github.com/elektrobohemian/StabiHacks) tool on GitHub, created by the former head of the department "Informations- und Datenmanagement" David Zellhöfer.
 
 ### Parsing Process
-To process the contents, I retrieved the single words from the XML files and linked them with the corresponding metadata (publishing date, page) using Python's [Element Tree Module](https://docs.python.org/3/library/xml.etree.elementtree.html).
+To process the contents, I retrieved the single words from the XML files and linked them with the corresponding metadata (publishing date, page) using Python's [Element Tree Module](https://docs.python.org/3/library/xml.etree.elementtree.html). Then, I iterated this process over all of the XML files and joined everything into one dataframe.
+
+That's the code I used to grab all the file paths that lead to XML files:
+<image src="images/Screenshot_from_2022-05-11_23-47-47.png"/>
+
+Because in fact, the hierarchy of the folders looks like this:
+<image src="images/Screenshot_from_2022-05-11_23-56-46.png"/>
