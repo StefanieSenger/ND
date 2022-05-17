@@ -20,10 +20,12 @@ The METS files hold some metadata that make +100,000 XML files, each containing 
 Not publishing the received data is a legal requirement, which of cause I conform to. If you want to start a similar analysis however, I would convey you to the [StabiHacks](https://github.com/elektrobohemian/StabiHacks) tool on GitHub, created by the former head of the department "Informations- und Datenmanagement" David Zellhöfer.
 
 ### Parsing Process
-To process the contents, I retrieved the single words from the XML files and linked them with the corresponding metadata (publishing date, page) using Python's [Element Tree Module](https://docs.python.org/3/library/xml.etree.elementtree.html). Then, I iterated this process over all of the XML files and joined everything into one dataframe.
+To process the contents, I retrieved the single words from the XML files and linked them to the corresponding metadata (publishing date, page) using Python's [Element Tree Module](https://docs.python.org/3/library/xml.etree.elementtree.html). Then, I iterated this process over all of the XML files and joined everything into one dataframe.
 
-That's the code I used to grab all the file paths that lead to XML files:
-<image src="images/Screenshot_from_2022-05-11_23-47-47.png" width="370"/>
+That's the code I used to grab all the relevant file paths:
 
-Walking recursively over all sub-folders is, in fact, necessary, because the hierarchy of the folders looks like this:
-<image src="images/Screenshot_from_2022-05-11_23-56-46.png" width="100"/>
+<image src="images/Screenshot_from_2022-05-11_23-47-47.png" width="450"/>
+
+Walking recursively over all sub-folders is, in fact, necessary, because the hierarchy of the data folder looks like this:
+
+<image src="images/Screenshot_from_2022-05-11_23-56-46.png" width="200"/>

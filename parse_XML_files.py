@@ -39,5 +39,10 @@ for root, directory_names,file_names in os.walk('2532889X'):
 
 # calling the parsing_words function on each element of all_paths
 # this will result in creating a csv file for each page from each issue within the hidden folder "parsed_data"
+didNotWork =[]
+
 for path_to_file in all_paths:
-    parsing_words(path_to_file)
+    try:
+        parsing_words(path_to_file)
+    except:
+        didNotWork.append(path_to_file)
